@@ -1,0 +1,41 @@
+class Dll{
+    Node head;
+    class Node{
+        int data;
+        Node next;
+        Node prev;
+    
+    Node(int data){
+        this.data=data;
+        next=null;
+        prev=null;
+    }
+    }
+    public void InsertintoBeginning(int data){
+        Node newNode=new Node(data);
+        if(head!=null)
+        {
+         newNode.next=head;
+        head.prev=newNode;
+    }
+    head=newNode;
+}
+public void printalltheNodes(){
+    Node temp = head;
+    
+    while(temp!=null){
+      System.out.print(temp.data+" ");
+        temp = temp.next;
+    }
+  System.out.println();
+}
+public static void main(String[] args)
+{
+    Dll list = new Dll();
+    list.InsertintoBeginning(100);
+    list.InsertintoBeginning(200);
+    list.InsertintoBeginning(300);
+    list.printalltheNodes();
+}
+}
+
